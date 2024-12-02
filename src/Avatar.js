@@ -5,7 +5,7 @@ import { withGalio } from 'theme';
 
 const Avatar = ({
   source,
-  size,
+  size = 50,
   label,
   labelColor,
   backgroundColor,
@@ -73,10 +73,6 @@ const Avatar = ({
       {renderImage()}
     </View>
   );
-};
-
-Avatar.defaultProps = {
-  size: 50,
 };
 
 Avatar.propTypes = {

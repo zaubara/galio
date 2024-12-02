@@ -4,9 +4,9 @@ import Text from '../ions/Text';
 import GalioTheme, { withGalio } from '../../theme';
 
 function Link({
-    children,
+    children = null,
     onPress,
-    theme,
+    theme = GalioTheme,
     ...rest
   }) {
     return (
@@ -19,15 +19,10 @@ function Link({
     );
   }
 
-  Link.defaultProps = {
-    children: null,
-    theme: GalioTheme,
-  };
-
-  Link.propTypes = {
-    children: PropTypes.any,
-    theme: PropTypes.any,
-    onPress: PropTypes.func.isRequired,
-  };
+Link.propTypes = {
+  children: PropTypes.any,
+  theme: PropTypes.any,
+  onPress: PropTypes.func.isRequired,
+};
 
 export default withGalio(Link);

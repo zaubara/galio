@@ -9,24 +9,24 @@ import Icon from './atomic/ions/Icon';
 import GalioTheme, { withGalio } from './theme';
 
 function Card({
-  avatar,
-  borderless, 
-  caption, 
-  captionColor,
-  card, 
+  avatar = '',
+  borderless = false, 
+  caption = '', 
+  captionColor = '',
+  card = true, 
   children,
-  footerStyle,
+  footerStyle = {},
   image,
   imageBlockStyle,
   imageStyle,
   location, 
   locationColor, 
-  shadow,
+  shadow = true,
   style, 
-  styles,
-  title, 
-  titleColor,
-  theme,
+  styles = {},
+  title = '', 
+  titleColor = '',
+  theme = GalioTheme,
   ...props 
 }) {
   function renderImage() {
@@ -102,20 +102,6 @@ function Card({
     </Block>
   );
 }
-
-Card.defaultProps = {
-  card: true,
-  shadow: true,
-  borderless: false,
-  styles: {},
-  theme: GalioTheme,
-  title: '',
-  titleColor: '',
-  caption: '',
-  captionColor: '',
-  footerStyle: {},
-  avatar: '',
-};
 
 Card.propTypes = {
   card: PropTypes.bool,
